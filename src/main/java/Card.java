@@ -1,4 +1,4 @@
-public class Card {
+public class Card implements Comparable<Card>{
     private String suit;
     private String symbol;
     private int value;
@@ -9,9 +9,21 @@ public class Card {
         this.value = value;
     }
 
+    public int getCardValue () {
+        return this.value;
+    }
+
+    public String getSuit () {
+        return this.suit;
+    }
+
     @Override
     public String toString () {
         return String.format("\nSuit: %s \nCard: %s \nValue: %s", suit, symbol, value);
     }
 
+    @Override
+    public int compareTo(Card card) {
+        return value - card.getCardValue();
+    }
 }
