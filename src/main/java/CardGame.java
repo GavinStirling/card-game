@@ -36,8 +36,8 @@ public class CardGame {
         }
     }
 
-    public List getDeck() {
-        return deckOfCards;
+    public String getDeck() {
+        return String.format("Name of Card Game: %s \nDeck: %s", name, deckOfCards);
     }
 
     public boolean checkDeckSize() {
