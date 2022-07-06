@@ -1,7 +1,7 @@
 public class HomeCommands extends Commands{
 
     public HomeCommands() {
-        super("Home", new String[]{"Play with cards", "Play Snap", "Quit"}, "home");
+        super("Home", new String[]{"Play with cards", "Play Snap", "Two Player Snap", "Quit"}, "home");
     }
 
     @Override
@@ -17,6 +17,9 @@ public class HomeCommands extends Commands{
                 break;
             case 2 :
                 setNextCommands("playSnap");
+                break;
+            case 3 :
+                setNextCommands("twoplayersnap");
                 break;
             default :
                 setNextCommands("");
