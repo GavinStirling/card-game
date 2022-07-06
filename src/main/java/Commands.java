@@ -5,7 +5,7 @@ public abstract class Commands {
 
     private final Scanner scanner = new Scanner(System.in);;
     private final String name;
-    private final String[] commands;
+    private String[] commands;
     private String nextCommands;
 
     public Commands(String name, String[] commands, String nextCommand) {
@@ -22,6 +22,10 @@ public abstract class Commands {
 
     public void setNextCommands(String nextCommand) {
         this.nextCommands = nextCommand;
+    }
+
+    public void setCommandsArray (String[] commands) {
+        this.commands = commands;
     }
 
     public void printMessage(String message) {
@@ -83,6 +87,10 @@ public abstract class Commands {
         } else {
             return userInput;
         }
+    }
+
+    public String getEnterInput() {
+        return scanner.nextLine();
     }
 
 }

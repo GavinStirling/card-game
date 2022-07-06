@@ -16,6 +16,10 @@ public class Main {
                     currentCommands = new PlayCardsCommands();
                     currentCommands.run();
                     break;
+                case "playSnap" :
+                    currentCommands = new SnapCommands();
+                    currentCommands.run();
+                    break;
            }
 
         }

@@ -5,12 +5,16 @@ import java.util.List;
 
 public class CardGame {
     private static final List<Card> deckOfCards = new ArrayList<>(52);
-    private static String name = "Normal Cards";
+    private static final String name = "Normal Cards";
 
     //    private List<String> suits = Arrays.asList("U+2660", "U+2665", "U+2666", "U+2663");
     private static final List<String> suits = Arrays.asList("Spades", "Hearts", "Diamonds", "Clubs");
 
     static {
+        setDeck();
+    }
+
+    public static void setDeck () {
         for (String suit : suits) {
             for (int i = 2; i <= 14; i++) {
                 switch (i) {
@@ -38,16 +42,34 @@ public class CardGame {
         return String.format("Name of Card Game: %s \nDeck: %s", name, deckOfCards);
     }
 
+
+
+    public static List getDeckOfCards () {
+        return deckOfCards;
+    }
+
     public static boolean checkDeckSize() {
         return deckOfCards.size() == 52;
     }
 
+    public static boolean checkDeckSize (int size) {
+        return deckOfCards.size() == size;
+    }
+
+    public static Card drawCard () {
+        return deckOfCards.get(0);
+    }
+
     public static String dealCard() {
-        return deckOfCards.get(0).shortToString();
+        return drawCard().shortToString();
     }
 
     public static void sortDeckInNumberOrder() {
         Collections.sort(deckOfCards);
+    }
+
+    public static void sortDeckInNumberOrder(List<Card> deck) {
+        Collections.sort(deck);
     }
 
     public static void sortDeckIntoSuits() {
@@ -86,6 +108,15 @@ public class CardGame {
             Card temp = deckOfCards.get(randomIndex);
             deckOfCards.set(randomIndex,deckOfCards.get(i));
             deckOfCards.set(i, temp);
+        }
+    }
+
+    public static void shuffleCards (List<Card> deck) {
+        for (int i = 0; i < deck.size(); i++) {
+            int randomIndex = (int) (Math.random()*deck.size());
+            Card temp = deck.get(randomIndex);
+            deck.set(randomIndex,deck.get(i));
+            deck.set(i, temp);
         }
     }
 }

@@ -17,6 +17,10 @@ public class Card implements Comparable<Card>{
         return this.suit;
     }
 
+    public String getSymbol () {
+        return this.symbol;
+    }
+
     @Override
     public String toString () {
         return String.format("\nSuit: %s \nCard: %s \nValue: %s", suit, symbol, value);
