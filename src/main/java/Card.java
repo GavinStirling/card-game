@@ -22,6 +22,10 @@ public class Card implements Comparable<Card>{
         return String.format("\nSuit: %s \nCard: %s \nValue: %s", suit, symbol, value);
     }
 
+    public String shortToString () {
+        return String.format("\n%s of %s", symbol, suit);
+    }
+
     @Override
     public int compareTo(Card card) {
         return value - card.getCardValue();

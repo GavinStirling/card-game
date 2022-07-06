@@ -4,15 +4,13 @@ import java.util.Collections;
 import java.util.List;
 
 public class CardGame {
-    private List<Card> deckOfCards = new ArrayList<>(52);
-    private String name;
+    private static final List<Card> deckOfCards = new ArrayList<>(52);
+    private static String name = "Normal Cards";
 
     //    private List<String> suits = Arrays.asList("U+2660", "U+2665", "U+2666", "U+2663");
-    private final List<String> suits = Arrays.asList("Spades", "Hearts", "Diamonds", "Clubs");
+    private static final List<String> suits = Arrays.asList("Spades", "Hearts", "Diamonds", "Clubs");
 
-    public CardGame(String name) {
-        this.name = name;
-
+    static {
         for (String suit : suits) {
             for (int i = 2; i <= 14; i++) {
                 switch (i) {
@@ -36,23 +34,23 @@ public class CardGame {
         }
     }
 
-    public String getDeck() {
+    public static String getDeck() {
         return String.format("Name of Card Game: %s \nDeck: %s", name, deckOfCards);
     }
 
-    public boolean checkDeckSize() {
+    public static boolean checkDeckSize() {
         return deckOfCards.size() == 52;
     }
 
-    public String dealCard() {
-        return deckOfCards.get(0).toString();
+    public static String dealCard() {
+        return deckOfCards.get(0).shortToString();
     }
 
-    public void sortDeckInNumberOrder() {
+    public static void sortDeckInNumberOrder() {
         Collections.sort(deckOfCards);
     }
 
-    public void sortDeckIntoSuits() {
+    public static void sortDeckIntoSuits() {
         List<Card> spades = new ArrayList<>();
         List<Card> hearts = new ArrayList<>();
         List<Card> diamonds = new ArrayList<>();
@@ -82,7 +80,7 @@ public class CardGame {
         deckOfCards.addAll(clubs);
     }
 
-    public void shuffleCards () {
+    public static void shuffleCards () {
         for (int i = 0; i < deckOfCards.size(); i++) {
             int randomIndex = (int) (Math.random()*deckOfCards.size());
             Card temp = deckOfCards.get(randomIndex);

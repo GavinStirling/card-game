@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Commands {
+public abstract class Commands {
 
     private final Scanner scanner = new Scanner(System.in);;
     private final String name;
@@ -13,6 +13,8 @@ public class Commands {
         this.commands = commands;
         this.nextCommands = nextCommand;
     }
+
+    abstract public void run();
 
     public String getNextCommands() {
         return nextCommands;
