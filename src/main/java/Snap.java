@@ -9,9 +9,6 @@ public class Snap extends CardGame{
     private static Card currentCard;
     private static Boolean isSnap = false;
 
-    //    private List<String> suits = Arrays.asList("U+2660", "U+2665", "U+2666", "U+2663");
-    private static final List<String> suits = Arrays.asList("Spades", "Hearts", "Diamonds", "Clubs");
-
     static {
         shuffleCards(snapDeck);
     }
@@ -36,13 +33,12 @@ public class Snap extends CardGame{
         return isSnap;
     }
 
-    public static int getDeckSize() {
-        return snapDeck.size();
+    public static void resetIsSnap () {
+        isSnap = false;
     }
 
-    public static void resetDeck () {
-        snapDeck = getDeckOfCards();
-        isSnap = false;
+    public static int getDeckSize() {
+        return snapDeck.size();
     }
 
     public static Card getTopCard () {
@@ -51,6 +47,13 @@ public class Snap extends CardGame{
 
     public static void removeCard () {
         snapDeck.remove(0);
+    }
+
+    public static void reset () {
+        resetDeck();
+        resetIsSnap();
+        setPreviousCard(null);
+        setCurrentCard(null);
     }
 
     public static Card drawSnapCard () {

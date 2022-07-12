@@ -6,7 +6,6 @@ public class CardGame {
     private static final String name = "Normal Cards";
 
     private static List<String> suits = Arrays.asList("\u2660", "\u2665", "\u2666", "\u2663");
-//    private static final List<String> suits = Arrays.asList("Spades", "Hearts", "Diamonds", "Clubs");
 
     static {
         setDeck();
@@ -40,7 +39,10 @@ public class CardGame {
         return String.format("Name of Card Game: %s \nDeck: %s", name, deckOfCards);
     }
 
-
+    public static void resetDeck () {
+        deckOfCards.clear();
+        setDeck();
+    }
 
     public static List getDeckOfCards () {
         return deckOfCards;

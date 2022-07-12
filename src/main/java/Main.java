@@ -20,6 +20,10 @@ public class Main {
                     currentCommands = new SnapCommands();
                     currentCommands.run();
                     break;
+                case "twoPlayerSnap" :
+                    currentCommands = new TwoPlayerSnapCommands();
+                    currentCommands.run();
+                    break;
                 default :
                     isActive = false;
                     break;
