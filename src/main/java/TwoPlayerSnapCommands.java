@@ -6,7 +6,6 @@ public class TwoPlayerSnapCommands extends Commands{
     @Override
     public void run() {
         printMessage("Welcome to two player snap.");
-        printMessage("Welcome to snap. If a player draws a card which is a snap, \nthey have two seconds to type in snap to win otherwise they miss.");
 
         int count = 1;
         boolean winner = false;
