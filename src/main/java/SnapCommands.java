@@ -38,15 +38,11 @@ public class SnapCommands extends Commands{
 
         switch (userInput) {
             case 1 :
-                Snap.resetDeck();
-                Snap.setPreviousCard(null);
-                Snap.setCurrentCard(null);
+                Snap.reset();
                 run();
                 break;
             case 2:
-                Snap.resetDeck();
-                Snap.setPreviousCard(null);
-                Snap.setCurrentCard(null);
+                Snap.reset();
                 setNextCommands("home");
                 break;
         }
