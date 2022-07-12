@@ -12,14 +12,14 @@ public class PlayCardsCommands extends Commands{
 
         switch(userInput) {
             case 1:
-                System.out.println(CardGame.getDeck());
+                printMessage(CardGame.getDeck());
                 break;
             case 2:
                 CardGame.shuffleCards();
                 printMessage("Deck has been shuffled!");
                 break;
             case 3:
-                System.out.println(CardGame.dealCard());
+                printMessage(CardGame.dealCard());
                 break;
             case 4:
                 CardGame.sortDeckInNumberOrder();
@@ -30,7 +30,7 @@ public class PlayCardsCommands extends Commands{
                 printMessage("Deck has been sorted by suit!");
                 break;
             case 6:
-                System.out.println("Thanks for playing!");
+                printMessage("Thanks for playing!");
                 setNextCommands("home");
                 break;
         }

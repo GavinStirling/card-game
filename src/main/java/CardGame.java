@@ -1,10 +1,8 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CardGame {
-    private static final List<Card> deckOfCards = new ArrayList<>(52);
+    private static List<Card> deckOfCards = new ArrayList<>(52);
     private static final String name = "Normal Cards";
 
     //    private List<String> suits = Arrays.asList("U+2660", "U+2665", "U+2666", "U+2663");
@@ -68,8 +66,8 @@ public class CardGame {
         Collections.sort(deckOfCards);
     }
 
-    public static void sortDeckInNumberOrder(List<Card> deck) {
-        Collections.sort(deck);
+    public static List sortDeckInNumberOrder(List<Card> deck) {
+        return deckOfCards.stream().sorted().collect(Collectors.toList());
     }
 
     public static void sortDeckIntoSuits() {
@@ -100,6 +98,10 @@ public class CardGame {
         deckOfCards.addAll(hearts);
         deckOfCards.addAll(diamonds);
         deckOfCards.addAll(clubs);
+    }
+
+    public static List sortDeckIntoSuits(List<Card> deck) {
+        return deckOfCards.stream().sorted().sorted(Comparator.comparing(Card::getSuit)).collect(Collectors.toList());
     }
 
     public static void shuffleCards () {

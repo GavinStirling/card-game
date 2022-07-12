@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Snap extends CardGame{
     private static List snapDeck = getDeckOfCards();
-    private static final String name = "Snap Cards";
 
     private static Card previousCard;
     private static Card currentCard;
@@ -52,10 +51,6 @@ public class Snap extends CardGame{
 
     public static void removeCard () {
         snapDeck.remove(0);
-    }
-
-    public static void removeCard (int index) {
-        snapDeck.remove(index);
     }
 
     public static Card drawSnapCard () {

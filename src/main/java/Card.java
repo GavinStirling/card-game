@@ -34,4 +34,9 @@ public class Card implements Comparable<Card>{
     public int compareTo(Card card) {
         return value - card.getCardValue();
     }
+
+//    @Override
+//    public String compareTo(String suit) {
+//        return null;
+//    }
 }
