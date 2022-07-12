@@ -12,7 +12,6 @@ public class SnapCommands extends Commands{
         printMessage("You drew the " + Snap.getPreviousCard().shortToString());
 
         while (!Snap.getIsSnap()) {
-
             if (Snap.checkDeckSize(0)) {
                 printMessage("All cards are gone, please try again!");
                 break;
@@ -51,6 +50,5 @@ public class SnapCommands extends Commands{
                 setNextCommands("home");
                 break;
         }
-
     }
 }
