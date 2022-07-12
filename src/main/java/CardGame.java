@@ -5,8 +5,8 @@ public class CardGame {
     private static List<Card> deckOfCards = new ArrayList<>(52);
     private static final String name = "Normal Cards";
 
-    //    private List<String> suits = Arrays.asList("U+2660", "U+2665", "U+2666", "U+2663");
-    private static final List<String> suits = Arrays.asList("Spades", "Hearts", "Diamonds", "Clubs");
+    private static List<String> suits = Arrays.asList("\u2660", "\u2665", "\u2666", "\u2663");
+//    private static final List<String> suits = Arrays.asList("Spades", "Hearts", "Diamonds", "Clubs");
 
     static {
         setDeck();
@@ -66,6 +66,7 @@ public class CardGame {
         Collections.sort(deckOfCards);
     }
 
+    // This is an overloaded method so that there is an option to sort without changing the current array. Uses stream.
     public static List sortDeckInNumberOrder(List<Card> deck) {
         return deckOfCards.stream().sorted().collect(Collectors.toList());
     }
@@ -100,6 +101,7 @@ public class CardGame {
         deckOfCards.addAll(clubs);
     }
 
+    // This is an overloaded method so that there is an option to sort without changing the current array. Uses stream.
     public static List sortDeckIntoSuits(List<Card> deck) {
         return deckOfCards.stream().sorted().sorted(Comparator.comparing(Card::getSuit)).collect(Collectors.toList());
     }

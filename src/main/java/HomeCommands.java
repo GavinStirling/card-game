@@ -21,6 +21,9 @@ public class HomeCommands extends Commands{
             case 3 :
                 setNextCommands("twoPlayerSnap");
                 break;
+            case 4 :
+                setNextCommands("");
+                break;
             default :
                 setNextCommands("");
                 break;

@@ -22,7 +22,5 @@ public class TwoPlayerSnapCommands extends Commands{
                 getEnterInput();
             }
         }
-
-
     }
 }

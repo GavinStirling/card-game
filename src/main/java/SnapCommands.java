@@ -12,22 +12,27 @@ public class SnapCommands extends Commands{
         printMessage("You drew the " + Snap.getPreviousCard().shortToString());
 
         while (!Snap.getIsSnap()) {
-            printMessage("Press enter to draw the next card!");
 
-            getEnterInput();
-            Snap.setCurrentCard(Snap.drawSnapCard());
-            printMessage("You drew the " + Snap.getCurrentCard().shortToString());
-
-            Snap.checkForSnap();
-
-            if (Snap.getIsSnap()) {
-                printMessage("Snap! Game Over...");
+            if (Snap.checkDeckSize(0)) {
+                printMessage("All cards are gone, please try again!");
                 break;
+
+            } else {
+                printMessage("Press enter to draw the next card!");
+
+                getEnterInput();
+                Snap.setCurrentCard(Snap.drawSnapCard());
+                printMessage("You drew the " + Snap.getCurrentCard().shortToString());
+
+                Snap.checkForSnap();
+
+                if (Snap.getIsSnap()) {
+                    printMessage("Snap! Game Over...");
+                    break;
+                }
+                Snap.setPreviousCard(Snap.getCurrentCard());
+                printMessage("" + Snap.getDeckSize());
             }
-            Snap.setPreviousCard(Snap.getCurrentCard());
-            printMessage("" + Snap.getDeckSize());
-
-
         }
         setCommandsArray(new String[]{"Play Again?", "Back to Home"});
         printCommands();
