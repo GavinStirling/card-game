@@ -9,7 +9,7 @@ The focus of the project was to use the following principles:
 * Polymorphism
 * Interfaces and Abstract Classes
 
-The project was broken up into stages and the project is completed up to Stage 4 (not including Stage 4).
+The project was broken up into stages and the project is completed up to Stage 4A.
 
 ## Stage 1
 Using classes, ArrayLists and methods, create a deck of Cards. You should use the following classes:
