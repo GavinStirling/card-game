@@ -5,7 +5,7 @@ public class CardGame {
     private static List<Card> deckOfCards = new ArrayList<>(52);
     private static final String name = "Normal Cards";
 
-    private static List<String> suits = Arrays.asList("\u2660", "\u2665", "\u2666", "\u2663");
+    private static final List<String> suits = Arrays.asList("\u2660", "\u2665", "\u2666", "\u2663");
 
     static {
         setDeck();

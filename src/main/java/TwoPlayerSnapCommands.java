@@ -7,36 +7,36 @@ public class TwoPlayerSnapCommands extends Commands{
     public void run() {
         printMessage("Welcome to two player snap.");
 
-        int count = 1;
-        boolean winner = false;
+        int playerTurnCounter = 1;
+        boolean isWinner = false;
 
         printMessage("Press enter to start!");
         getEnterInput();
 
-        while (!winner) {
+        while (!isWinner) {
             if (Snap.checkDeckSize(0)) {
                 printMessage("All cards are gone, please try again!");
                 break;
             } else {
-                if (count %2 != 0) {
+                if (playerTurnCounter % 2 != 0) {
                     printMessage("Player 1 to draw a card:");
                     getEnterInput();
                     Snap.setCurrentCard(Snap.drawSnapCard());
                     printMessage("You drew the " + Snap.getCurrentCard().shortToString());
 
-                    if (count != 1) {
+                    if (playerTurnCounter != 1) {
                         Snap.checkForSnap();
                     }
 
                     if (Snap.getIsSnap()) {
                         printMessage("Snap! Player 1 wins!");
-                        winner = true;
+                        isWinner = true;
                         break;
                     }
 
                     Snap.setPreviousCard(Snap.getCurrentCard());
                     printMessage("Cards remaining: " + Snap.getDeckSize());
-                    count +=1;
+                    playerTurnCounter +=1;
                 } else {
                     printMessage("Player 2 to draw a card:");
                     getEnterInput();
@@ -47,13 +47,13 @@ public class TwoPlayerSnapCommands extends Commands{
 
                     if (Snap.getIsSnap()) {
                         printMessage("Snap! Player 2 wins!");
-                        winner = true;
+                        isWinner = true;
                         break;
                     }
 
                     Snap.setPreviousCard(Snap.getCurrentCard());
                     printMessage("Cards remaining: " + Snap.getDeckSize());
-                    count +=1;
+                    playerTurnCounter +=1;
                 }
             }
         }
