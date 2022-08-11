@@ -56,12 +56,26 @@ public class CardGame {
         return deckOfCards.size() == size;
     }
 
-    public static Card drawCard () {
+    public static Card drawCard (int index) {
         return deckOfCards.get(0);
     }
 
+    public static Card drawCard () {
+        return drawCard(0);
+    }
+
+    public static void removeCard (int index) {
+        deckOfCards.remove(index);
+    }
+
+    public static void removeCard () {
+        removeCard(0);
+    }
+
     public static String dealCard() {
-        return drawCard().shortToString();
+        String dealtCard = drawCard().shortToString();
+        removeCard();
+        return dealtCard;
     }
 
     public static void sortDeckInNumberOrder() {
